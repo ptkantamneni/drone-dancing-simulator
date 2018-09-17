@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+service Drone{
+    rpc getCoord(Id) returns (stream Coord) {}
+    rpc getId(Request) returns (Id) {}
+}
+
+message Coord{
+    int32 x = 1;
+    int32 y = 2;
+    int32 z = 3;
+    Id id = 4;
+}
+
+message Id{
+    int64 id = 1;
+}
+
+message Request{
+    string data = 1;
+}
+
+
+
+
